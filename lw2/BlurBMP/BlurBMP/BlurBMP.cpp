@@ -154,7 +154,6 @@ int main(int argc, char* argv[])
 
     RGBQUAD** rgbInfo = ReadBMPFile(fileName);
 
-
     // открываем файл
     std::ifstream fileStream(fileName, std::ifstream::binary);
     if (!fileStream) {
