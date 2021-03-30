@@ -31,7 +31,7 @@ DWORD WINAPI ThreadProc(CONST LPVOID lpParam)
     {
         for (size_t j = 0; j < OPERATION_COUNT; j++)
         {
-            int operation = j;
+            size_t operation = j;
         }
         clock_t operationStartTime = clock();
         clock_t resultTime = operationStartTime - startTime;
@@ -43,6 +43,9 @@ DWORD WINAPI ThreadProc(CONST LPVOID lpParam)
 
 int main(int argc, char* argv[])
 {
+    char ch;
+    cin >> ch;
+
     auto startTime = clock();
     setlocale(LC_ALL, "Russian");
 
