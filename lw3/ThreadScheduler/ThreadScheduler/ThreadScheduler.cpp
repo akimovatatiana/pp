@@ -9,7 +9,8 @@
 using namespace std;
 
 const int THREAD_COUNT = 2;
-const int OPERATION_COUNT = 100;
+const int OPERATION_COUNT = 1000000;
+const int CYCLE_COUNT = 20;
 const string INVALID_ARGS = "Invalid arguments count. Usage: ThreadScheduler.exe <fileForFirstThread> <fileForSecondThread>";
 
 struct DataForProc
@@ -26,12 +27,15 @@ DWORD WINAPI ThreadProc(CONST LPVOID lpParam)
     clock_t startTime = lpData->time;
     ofstream file;
     file.open(lpData->fileName);
-
-    for (size_t i = 0; i < OPERATION_COUNT; i++)
+    for (size_t i = 0; i < CYCLE_COUNT; i++)
     {
+        for (size_t j = 0; j < OPERATION_COUNT; j++)
+        {
+            int operation = j;
+        }
         clock_t operationStartTime = clock();
         clock_t resultTime = operationStartTime - startTime;
-        std::string outStr = to_string(threadNumber) + "|" + to_string(resultTime) +"\n";
+        std::string outStr = to_string(threadNumber) + "|" + to_string(resultTime) + "\n";
         file << outStr;
     }
     ExitThread(0); // функция устанавливает код завершения потока в 0
