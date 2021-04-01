@@ -18,9 +18,12 @@
     <ClCompile Include="BlurBMP.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Bitmap.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BlurBMP.h">
+    <ClInclude Include="Bitmap.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
